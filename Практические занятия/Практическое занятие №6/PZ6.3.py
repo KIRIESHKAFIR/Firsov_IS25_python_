@@ -13,7 +13,6 @@ def shift_right(a):
 
 # Пример вызова
 a = [1, 2, 3, 4, 5]
-a.extend(13)
 result = shift_right(a)
 print(f"Исходный список: {a}")
 print(f"Список после сдвига: {result}")
