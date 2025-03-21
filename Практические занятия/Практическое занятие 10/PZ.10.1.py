@@ -11,14 +11,16 @@ homebook = {'Толстой', 'Грибоедов', 'Чехов', 'Пушкин'
 bookshop = {'Пушкин', 'Достоевский', 'Маяковский'}
 galary = {'Чехов', 'Тютчев', 'Пушкин'}
 
-m_list = []
-if "Пушкин" in magistr and "Тютчев" in magistr : 
-    m_list.append("Магистр")
-if "Пушкин" in homebook and "Тютчев" in homebook : 
-    m_list.append("ДомКниги")
-if "Пушкин" in bookshop and "Тютчев" in bookshop : 
-    m_list.append("БукМаркет")
-if "Пушкин" in galary and "Тютчев" in galary :
-    m_list.append("Галерея")
+pushityt = {"Тютчев","Пушкин"}
+shop = {}
+shop = set(shop)
+if (pushityt & magistr) == pushityt:
+    shop.add("Магистр")
+if (pushityt & homebook) == pushityt:
+    shop.add("ДомКниги")
+if (pushityt & bookshop) == pushityt:
+    shop.add("БукМаркет")
+if (pushityt & galary) == pushityt:
+    shop.add("Галерея")
 
-print("Книги Пушкина и Тютчева есть в", ", ".join(m_list))
+print("Книги Пушкина и Тютчева есть в", ", ".join(shop))
