@@ -12,9 +12,13 @@ bookshop = {'Пушкин', 'Достоевский', 'Маяковский'}
 galary = {'Чехов', 'Тютчев', 'Пушкин'}
 
 m_list = []
-if "Пушкин" in magistr and "Тютчев" in magistr : m_list.append("Магистр")
-if "Пушкин" in homebook and "Тютчев" in homebook : m_list.append("ДомКниги")
-if "Пушкин" in bookshop and "Тютчев" in bookshop : m_list.append("БукМаркет")
-if "Пушкин" in galary and "Тютчев" in galary : m_list.append("Галерея")
+if "Пушкин" in magistr and "Тютчев" in magistr : 
+    m_list.append("Магистр")
+if "Пушкин" in homebook and "Тютчев" in homebook : 
+    m_list.append("ДомКниги")
+if "Пушкин" in bookshop and "Тютчев" in bookshop : 
+    m_list.append("БукМаркет")
+if "Пушкин" in galary and "Тютчев" in galary :
+    m_list.append("Галерея")
 
 print("Книги Пушкина и Тютчева есть в", ", ".join(m_list))
