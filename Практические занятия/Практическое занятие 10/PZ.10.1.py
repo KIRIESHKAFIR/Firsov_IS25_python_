@@ -23,4 +23,4 @@ if (pushityt & bookshop) == pushityt:
 if (pushityt & galary) == pushityt:
     shop.add("Галерея")
 
-print("Книги Пушкина и Тютчева есть в", ", ".join(shop))
+print("Книги Пушкина и Тютчева есть в", ", ".join(shop), ".")
