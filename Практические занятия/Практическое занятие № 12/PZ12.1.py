@@ -6,7 +6,7 @@ from functools import reduce
 posl = [random.randint(1,20) for x in range(20)]
 print("Исходная последовательность:", " ".join(map(str, posl)))
 
-unik = list(set(posl))
+unik = set(posl)
 print("Уникальные элементы:", ' '.join(map(str, unik)))
 
 print(f'Количество уникальных элементов: {len(unik)}')
