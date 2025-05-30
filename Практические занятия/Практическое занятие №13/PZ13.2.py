@@ -5,6 +5,6 @@ N = int(input("Введите номер столбца, который буде
 
 for i in spis:
     i[N] *= 2
-    
+print("Вот новый двумерный список: ")
 for i in spis:
-    print("Вот новый двумерный список: "' '.join(list(map(str, i))))
+    print(' '.join(list(map(str, i))))
