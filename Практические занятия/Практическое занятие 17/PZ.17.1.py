@@ -129,7 +129,6 @@ class RegistrationForm:
         tk.Button(
             button_frame,
             text="Submit",
-            command=self.submit,
             bg='green',
             fg='white',
             padx=20,
@@ -150,22 +149,7 @@ class RegistrationForm:
         
         # Настройка отступов
         form_frame.columnconfigure(1, weight=1)
-    
-    def submit(self):
-        data = {
-            'first_name': self.entries['First Name'].get(),
-            'last_name': self.entries['Last Name'].get(),
-            'screen_name': self.entries['Screen Name'].get(),
-            'dob': f"{self.month_var.get()} {self.day_var.get()} {self.year_var.get()}",
-            'gender': self.gender_var.get(),
-            'country': self.country_var.get(),
-            'email': self.entries['E-mail'].get(),
-            'phone': self.entries['Phone'].get(),
-            'password': self.entries['Password'].get(),
-            'confirm_password': self.entries['Confirm Password'].get(),
-            'terms_accepted': self.terms_var.get()
-        }
-        print("Registration data:", data)
+
 
 if __name__ == "__main__":
     root = tk.Tk()
