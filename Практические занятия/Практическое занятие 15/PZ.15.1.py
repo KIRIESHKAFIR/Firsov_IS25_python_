@@ -33,6 +33,9 @@ def create_table(conn):
     except Error as e:
         print(e)
 
+
+
+
 def add_service(conn, ysluga):
     """ Добавляем новую услугу в таблицу """
     sql = ''' INSERT INTO uslugi(фио_мастера, фио_клиента, пол, название_стрижки, стоимость)
@@ -48,6 +51,18 @@ def delete_service(conn, full_name):
     cursor.execute(sql, (full_name,))
     conn.commit()
     return cursor.rowcount
+
+def update_service(conn, full_name, full_name_master, gender, price, nazv_stich):
+    """Обновление данных услуги по фио_клиента"""
+    sql = ''' UPDATE uslugi 
+              SET фио_мастера = ?, пол = ?, название_стрижки = ?, стоимость = ? 
+              WHERE фио_клиента = ? '''
+    cursor = conn.cursor()
+    cursor.execute(sql, (full_name_master, gender,  nazv_stich, price, full_name))
+    conn.commit()
+    return cursor.rowcount
+
+
 
 def search_services(conn, search_term=None, field=None):
     """ Поиск услуг по различным критериям """
@@ -109,7 +124,9 @@ def main():
         delete_service(conn, "Дио Брандо Танакович")
         delete_service(conn, "Йегер Эрен Гришегорьевич")
         
-        
+        update_service(conn, "Астерикс Галльский", "Петрова Елена Сергеевна", "М", 1000.0, "НЕ Воинский ирокез")
+        update_service(conn, "Фея Динь-Динь", "Иванова Анна Петровна", "Ж", 1200.0, "НЕ Волшебный каскад")
+        update_service(conn, "Редгрейв Данте Спардович", "Сидорова Мария Дмитриевна", "М", 1500.0, "НЕ ПиццаМен")
         # Закрываем соединение
         conn.close()
     else:
